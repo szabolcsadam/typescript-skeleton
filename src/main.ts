@@ -11,4 +11,29 @@ const myName = "Dojo";
 // eslint-disable-next-line jest/require-hook
 sayHello(myName);
 
-export { sayHello, sum };
+function compute(num: string): string {
+  let retVal = "";
+  const divideNumbers = {
+    3: "Foo",
+    5: "Bar",
+    7: "Qix"
+  };
+  Object.entries(divideNumbers).forEach(([key, value], index) => {
+    if (+num % +key === 0) {
+      retVal += value;
+    }
+  });
+  num.split("").forEach(function (c) {
+    Object.entries(divideNumbers).forEach(([key, value], index) => {
+      if (+c === +key) {
+        retVal += value;
+      }
+    });
+  });
+  if (retVal === "") {
+    retVal += num;
+  }
+  return retVal;
+}
+
+export { sayHello, sum, compute };
