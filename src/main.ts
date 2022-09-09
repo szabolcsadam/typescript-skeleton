@@ -16,7 +16,7 @@ function compute(num: string): string {
   const divideNumbers = {
     3: "Foo",
     5: "Bar",
-    7: "Qix"
+    7: "Qix",
   };
   Object.entries(divideNumbers).forEach(([key, value], index) => {
     if (+num % +key === 0) {
